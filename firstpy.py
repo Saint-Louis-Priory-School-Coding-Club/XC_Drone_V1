@@ -1,1 +1,2 @@
-print('hi')
+while True:
+    print("haha 420")
