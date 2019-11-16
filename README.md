@@ -2,9 +2,9 @@
 
 ## AI
 
-###auto encoder
+### auto encoder
 
-###image recognition
+### image recognition
 
 - robert
 - tariq
