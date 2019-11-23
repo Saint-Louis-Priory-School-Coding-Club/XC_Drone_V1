@@ -97,6 +97,9 @@ while True:
                             cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
     BLUE = [255, 255, 255]
     crop_img = cv2.resize(crop_img, (100, 100), interpolation=cv2.INTER_AREA)
+    if write_to_file and len(keypoints) > 0:
+        # frame = cv2.flip(crop_img, 0)
+        out.write(crop_img)
     # nored = cv2.resize(nored, (100, 100), interpolation=cv2.INTER_AREA)
     '''colorcode = nored.mean(axis=0).mean(axis=0)
     hsvcoder = colorsys.rgb_to_hsv(colorcode[2] / 255, colorcode[1] / 255, colorcode[0] / 255)
@@ -117,9 +120,6 @@ while True:
     # cv2.imshow("nored", nored)
     # cv2.imshow('blobs', im_with_keypoints)
     # cv2.imshow('blob', im_with_keypoints)
-    if write_to_file:
-        frame = cv2.flip(crop_img, 0)
-        out.write(frame)
     if cv2.waitKey(1) == 27:
         break  # esc to quit
 cv2.destroyAllWindows()
